@@ -37,9 +37,31 @@ function biggestNumber(number1, number2) {
 
 console.log(biggestNumber(3,10));
 
-// 1. Create a function named `calculateGST`, given the price of an item, and a GST value, 
+// 1. Create a function named `calculateGST`, given the price of an item, and a GST percentage, 
 // calculate the gst amount and return it
 
-// 2. Create a function named `calculatePerimeter`, given the width and height, return the perimeter
+// Calculate GST from a price and gstPercentage
+// - price:float the amount of the product in dollars
+// - gstPercentage:integer the GST in percentage (example: 9%)
+function calculateGST(price, gstPercentage){
+    let gst = price * (gstPercentage/100);
+    return gst;
+}
+
+let price = 500;
+let gstPercentage = 9;
+
+calculateGST(gstPercentage, price);  // ORDER IS WRONG!
+// => calculateGST(9, 500)
+
+// 2. Create a function named `calculatePerimeter`, given the width and length, return the perimeter
+function calculatePerimeter(width, length) {
+    return (width+length) * 2;
+}
+
+calculatePerimeter(30, 50);
 
 // 3. Write a function that calculates the area of a circle.
+function getAreaOfCircle(radius) {
+    return 22/7 * radius ** 2;
+}
