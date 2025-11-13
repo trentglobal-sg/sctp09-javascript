@@ -6,7 +6,7 @@ console.log("What is your weight?");
 let weight = prompt("Weight (kg): ");
 
 console.log("What is your height?");
-let height = prompt("Height (kg): ");
+let height = prompt("Height (m): ");
 
 let bmi = weight / height ** 2;
 
