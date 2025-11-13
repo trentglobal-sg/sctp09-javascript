@@ -37,4 +37,9 @@ function biggestNumber(number1, number2) {
 
 console.log(biggestNumber(3,10));
 
-// 
+// 1. Create a function named `calculateGST`, given the price of an item, and a GST value, 
+// calculate the gst amount and return it
+
+// 2. Create a function named `calculatePerimeter`, given the width and height, return the perimeter
+
+// 3. Write a function that calculates the area of a circle.
