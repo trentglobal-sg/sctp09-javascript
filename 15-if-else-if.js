@@ -11,9 +11,9 @@ let bmi = weight / height ** 2;
 console.log("BMi = ", bmi);
 
 // Make sure that we go in order
-if (bmi <18.5) {
+if (bmi < 18.5) {
     console.log("You are normal weight");
-} else if (bmi <25) {
+} else if (bmi < 25) {
     console.log("You are underweight");
 } else if (bmi < 30) {
     console.log("You are overweight");
