@@ -16,9 +16,9 @@ while (num < 5) {
 }
 console.log("Finished");
 
-let num = 1;
-while (num < 6) {
-    console.log(num);
-    num = num + 1;
+let num2 = 1;
+while (num2 < 6) {
+    console.log(num2);
+    num2 = num2 + 1;
 }
 console.log("Finished");
