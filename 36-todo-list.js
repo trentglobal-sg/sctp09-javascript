@@ -31,7 +31,7 @@ function showTodos(todolist) {
     // we go through an array, take out one item at a time, and do something to it
     for (let i = 0; i < todolist.length; i++) {
         let todo = todolist[i];
-        console.log("ID:", todo.id, "Name:", todo.name, ", Urgency:", todo.urgency, 
+        console.log("ID:", todo.id, "Name:", todo.name, ", Urgency:", todo.urgency,
             ", Date Due:", todo.dateDue, ", Done", todo.done);
     }
 
@@ -64,7 +64,7 @@ function markAsDone(todolist) {
     console.log("Mark Task As Done");
     showTodos(todolist);
     console.log();
-    let wantedID  = parseInt(prompt("Select the ID of the task that you want to be marked as done: "));
+    let wantedID = parseInt(prompt("Select the ID of the task that you want to be marked as done: "));
 
     // linear search
     let wantedTodo = null;
@@ -75,11 +75,64 @@ function markAsDone(todolist) {
             break;
         }
     }
-   
+
     wantedTodo.done = true;
 
 }
 
+function deleteTodo(todolist) {
+    console.log("Delete Todos");
+    console.log();
+    showTodos(todolist);
+    console.log();
+    let wantedID = parseInt(prompt("Enter the ID of the todo to delete: "));
+
+    // to delete using splice
+    let indexToDelete = null;
+    for (let i = 0; i < todolist.length; i++) {
+        let currentTodo = todolist[i];
+        if (currentTodo.id == wantedID) {
+            indexToDelete = i;
+            break;
+        }
+    }
+
+    if (indexToDelete != null) {
+        todolist.splice(indexToDelete, 1);
+    } else {
+        console.log("No todo with id:", wantedID, "found");
+    }
+
+
+}
+
 // addNewTodo(todolist);
-markAsDone(todolist);
-showTodos(todolist);
+// markAsDone(todolist);
+// deleteTask(todolist);
+// showTodos(todolist);
+
+while (true) {
+    console.log("1. Show todos");
+    console.log("2. Add todo");
+    console.log("3. Mark todo as done");
+    console.log("4. Delete");
+    console.log("5. Quit");
+
+    let choice = parseInt(prompt("Enter your choice: "));
+    if (choice == 1) {
+        showTodos(todolist);
+    }
+    if (choice == 2) {
+        addNewTodo(todolist);
+    }
+    if (choice == 3) {
+        markAsDone(todolist);
+    }
+    if (choice == 4) {
+        deleteTodo(todolist);
+    }
+    if (choice ==5) {
+        break;
+    }
+}
+
